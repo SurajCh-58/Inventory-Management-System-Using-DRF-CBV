@@ -10,4 +10,4 @@ class CategoryView(ModelViewSet):
 
 class ItemView(ModelViewSet):
     serializer_class=ItemSerializer
-    queryset=Item.objects.all()
+    queryset=Item.objects.select_related('category').all()
